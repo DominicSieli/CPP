@@ -4,12 +4,12 @@ template<typename T>
 class Function_Object
 {
 private:
-	const T value;
+	const T data;
 
 public:
-	Function_Object(const T& v) : value{v} {}
-	T Get_Value() const { return this->value; }
-	bool operator()(const T& x) const { return x < value; }
+	Function_Object(const T& value) : data{value} {}
+	const T& Get_Data() const noexcept {return this->data;}
+	bool operator()(const T& x) const {return x < this->data;}
 };
 
 int main()
@@ -19,12 +19,10 @@ int main()
 
 	if(functor(number) == true)
 	{
-		std::cout << number << " < " << functor.Get_Value() << '\n';
+		std::cout << number << " < " << functor.Get_Data() << '\n';
 	}
 	else
 	{
-		std::cout << number << " > " << functor.Get_Value() << '\n';
+		std::cout << number << " > " << functor.Get_Data() << '\n';
 	}
-
-	std::cin.get();
 }

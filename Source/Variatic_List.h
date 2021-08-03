@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <sstream>
 
@@ -6,10 +7,10 @@ std::string Variatic_List()
 	return "";
 }
 
-template<typename T1, typename... Tx>
-std::string Variatic_List(const T1& t1, const Tx&... list)
+template<typename T0, typename... Tn>
+std::string Variatic_List(const T0& t0, const Tn&... list)
 {
 	std::stringstream sstream;
-	sstream << t1 << " " << Variatic_List(list...);
+	sstream << t0 << " " << Variatic_List(list...);
 	return sstream.str();
 }

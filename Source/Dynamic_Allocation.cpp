@@ -9,12 +9,4 @@ int main()
 
 	delete int_pointer;
 	int_pointer = nullptr;
-
-	if(int_pointer != nullptr)
-	{
-		std::cout << "Value of int_pointer: " << *int_pointer << '\n';
-		std::cout << "Address of int_pointer: " << int_pointer << '\n';
-	}
-
-	std::cin.get();
 }

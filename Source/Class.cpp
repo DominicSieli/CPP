@@ -6,7 +6,7 @@ class Abstract_Base_Class
 public:
 	virtual ~Abstract_Base_Class() {}
 	virtual void Set_Data(T) = 0;
-	virtual int Get_Data() const = 0;
+	virtual T Get_Data() const = 0;
 };
 
 template<typename T>
@@ -33,10 +33,8 @@ public:
 int main()
 {
 	Sub_Class<int> sub_Class(0);
-	std::cout << sub_Class.Get_Data() << '\n';
+	std::cout << "Data Value: " << sub_Class.Get_Data() << '\n';
 
 	sub_Class.Set_Data(20);
-	std::cout << sub_Class.Get_Data() << '\n';
-
-	std::cin.get();
+	std::cout << "Data Value: " << sub_Class.Get_Data() << '\n';
 }

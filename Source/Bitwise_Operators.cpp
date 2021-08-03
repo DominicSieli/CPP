@@ -44,6 +44,4 @@ int main()
     std::cout << "Shift Right by 1 (1010 >> 1)" << '\n';
     std::cout << " " << b_1010 << '\n';
     std::cout << "=" << (b_1010 >> 1) << '\n';
-
-    std::cin.get();
 }

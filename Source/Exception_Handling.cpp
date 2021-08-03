@@ -2,38 +2,38 @@
 #include <iostream>
 #include <exception>
 
-class OutOfRange
+class Out_Of_Range
 {
 private:
 	int data = std::numeric_limits<int>::max();
 
 public:
-	const int GetData() const noexcept
+	const int Get_Data() const noexcept
 	{
 		return this->data;
 	}
 
-	void AddData(int addend)
+	void Add_Data(int addend)
 	{
 		try
 		{
-			if (data + addend < 1)
+			if(data + addend < 1)
 			{
 				this->data = std::numeric_limits<int>::max();
-				throw std::runtime_error("Value out of range exception in OutOfRange class SetData method!");
+				throw std::runtime_error("Value out of range exception in Out_Of_Range class Add_Data method!");
 			}
 			else
 			{
 				this->data += addend;
 			}
 		}
-		catch (const std::exception &exception)
+		catch(const std::exception& exception)
 		{
 			std::cerr << exception.what() << '\n';
 		}
-		catch (...)
+		catch(...)
 		{
-			std::cerr << "Runtime error in ExceptionHandling class SetData method!!" << '\n';
+			std::cerr << "Runtime error in ExceptionHandling class Add_Data method!!" << '\n';
 		}
 	}
 };
@@ -44,7 +44,7 @@ double Divide(double numerator, double denominator)
 
 	try
 	{
-		if (denominator == 0.00)
+		if(denominator == 0.00)
 		{
 			throw std::runtime_error("Divide by 0 exception in Divide function!");
 		}
@@ -53,11 +53,11 @@ double Divide(double numerator, double denominator)
 			quotient = numerator / denominator;
 		}
 	}
-	catch (std::exception &exception)
+	catch(std::exception& exception)
 	{
 		std::cerr << exception.what() << '\n';
 	}
-	catch (...)
+	catch(...)
 	{
 		std::cerr << "Runtime error in Divide function!" << '\n';
 	}
@@ -67,11 +67,7 @@ double Divide(double numerator, double denominator)
 
 int main()
 {
-	OutOfRange outOfRange;
-	outOfRange.AddData(10);
-
-	std::cout << outOfRange.GetData() << '\n';
-	std::cout << Divide(10.00, 0.00) << '\n';
-
-	std::cin.get();
+	Out_Of_Range out_Of_Range;
+	out_Of_Range.Add_Data(10);
+	double quotient = Divide(10.00, 0.00);
 }

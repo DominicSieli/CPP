@@ -13,6 +13,4 @@ int main()
 	std::cout << "c = " << c << " - Type: " << typeid(c).name() << '\n';
 	std::cout << "d = " << d << " - Type: " << typeid(d).name() << '\n';
 	std::cout << "e = " << e << " - Type: " << typeid(e).name() << '\n';
-
-	std::cin.get();
 }

@@ -7,37 +7,41 @@ private:
 	double imaginary = 0.00;
 
 public:
-	Complex(const double &r = 0.00, const double &i = 0.00) : real{r}, imaginary{i} {}
+	Complex(double r = 0.00, double i = 0.00) : real{r}, imaginary{i} {}
 
-	double Real() const { return real; }
+	double Get_Real() const {return this->real;}
 
-	void Real(const double &d) { real = d; }
+	void Set_Real(double r) {this->real = r;}
 
-	double Imaginary() const { return imaginary; }
+	double Get_Imaginary() const {return this->imaginary;}
 
-	void Imaginary(const double &d) { imaginary = d; }
+	void Set_Imaginary(double i) {this->imaginary = i;}
 
-	Complex &operator+=(const Complex &z)
+	Complex& operator+=(Complex c)
 	{
-		real += z.real, imaginary += z.imaginary;
+		this->real += c.real;
+		this->imaginary += c.imaginary;
 		return *this;
 	}
 
-	Complex &operator-=(const Complex &z)
+	Complex& operator-=(Complex c)
 	{
-		real -= z.real, imaginary -= z.imaginary;
+		this->real -= c.real;
+		this->imaginary -= c.imaginary;
 		return *this;
 	}
 
-	Complex &operator*=(const Complex &z)
+	Complex& operator*=(Complex c)
 	{
-		real *= z.real, imaginary *= z.imaginary;
+		this->real *= c.real;
+		this->imaginary *= c.imaginary;
 		return *this;
 	}
 
-	Complex &operator/=(const Complex &z)
+	Complex& operator/=(Complex c)
 	{
-		real /= z.real, imaginary /= z.imaginary;
+		this->real /= c.real;
+		this->imaginary /= c.imaginary;
 		return *this;
 	}
 };
@@ -46,8 +50,6 @@ int main()
 {
 	Complex complex(2.00, 4.00);
 
-	std::cout << complex.Real() << '\n';
-	std::cout << complex.Imaginary() << '\n';
-
-	std::cin.get();
+	std::cout << complex.Get_Real() << '\n';
+	std::cout << complex.Get_Imaginary() << '\n';
 }

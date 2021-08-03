@@ -4,9 +4,9 @@
 template<typename T>
 void Print(const std::initializer_list<T>& list)
 {
-	for(T item : list)
+	for(T x : list)
 	{
-		std::cout << item << " ";
+		std::cout << x << " ";
 	}
 
 	std::cout << '\n';
@@ -15,6 +15,4 @@ void Print(const std::initializer_list<T>& list)
 int main()
 {
 	Print<int>({1, 2, 3, 4});
-
-	std::cin.get();
 }

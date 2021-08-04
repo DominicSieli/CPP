@@ -44,6 +44,4 @@ int main()
 	{
 		std::cout << substrings[i] << '\n';
 	}
-
-	std::cin.get();
 }

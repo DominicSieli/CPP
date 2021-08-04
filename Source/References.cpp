@@ -13,6 +13,4 @@ int main()
 
 	std::cout << "Value of r_value_reference: " << r_value_reference << '\n';
 	std::cout << "Address of r_value_reference: " << &r_value_reference << '\n';
-
-	std::cin.get();
 }

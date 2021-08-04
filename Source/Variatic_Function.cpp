@@ -1,6 +1,7 @@
+#include <cstdarg>
 #include <iostream>
 
-void Variatic_Function(const unsigned int& n, ...)
+void Variatic_Function(unsigned int n, ...)
 {
 	va_list list;
 	va_start(list, n);
@@ -18,6 +19,4 @@ void Variatic_Function(const unsigned int& n, ...)
 int main()
 {
 	Variatic_Function(6,1,2,3,4,5,6);
-
-	std::cin.get();
 }

@@ -8,7 +8,7 @@ std::string Variatic_List()
 }
 
 template<typename T0, typename... Tn>
-std::string Variatic_List(const T0& t0, const Tn&... list)
+std::string Variatic_List(T0 t0, Tn... list)
 {
 	std::stringstream sstream;
 	sstream << t0 << " " << Variatic_List(list...);

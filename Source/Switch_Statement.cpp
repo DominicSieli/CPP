@@ -1,7 +1,5 @@
 #include <iostream>
 
-unsigned short number = 2;
-
 enum class Data : unsigned short
 {
 	Data_0,
@@ -11,6 +9,7 @@ enum class Data : unsigned short
 
 int main()
 {
+	unsigned short number = 0;
 	Data data = (Data)number;
 
 	switch(data)
@@ -26,6 +25,4 @@ int main()
 
 		default : break;
 	}
-
-	std::cin.get();
 }

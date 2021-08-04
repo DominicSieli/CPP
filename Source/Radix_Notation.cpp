@@ -22,6 +22,4 @@ int main()
     {
         std::cout << "Decimal: " << std::dec << decimal << " = " << "Hexadecimal: " << "0x" << std::hex << decimal << '\n';
     }
-
-    std::cin.get();
 }

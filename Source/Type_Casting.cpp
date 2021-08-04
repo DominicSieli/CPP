@@ -16,8 +16,7 @@ public:
 };
 
 class SubClass : public BaseClass
-{
-};
+{};
 
 int main()
 {
@@ -25,6 +24,4 @@ int main()
 	BaseClass *baseClass = dynamic_cast<BaseClass*>(subClass);
 
 	std::cout << &baseClass << '\n';
-
-	std::cin.get();
 }

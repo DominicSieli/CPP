@@ -1,7 +1,7 @@
 #include <iostream>
 
 template<typename T>
-void Print(const T& input)
+void Print(T input)
 {
 	std::cout << input << '\n';
 }
@@ -9,9 +9,7 @@ void Print(const T& input)
 int main()
 {
 	Print(2);
-	Print(2.2);
 	Print('A');
+	Print(2.2);
 	Print("Dominic");
-
-	std::cin.get();
 }

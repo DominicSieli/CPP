@@ -14,9 +14,9 @@ int main()
 {
 	for(unsigned int i = 0; i < 10; i++)
 	{
-		Struct newStruct;
-		newStruct.data = 0;
-		structs.push_back(newStruct);
+		Struct new_struct;
+		new_struct.data = 0;
+		structs.push_back(new_struct);
 	}
 
 	for(unsigned int i = 0; i < structs.size(); i++)
@@ -26,6 +26,4 @@ int main()
 
 	std::cout << '\n' << "Struct size : " << sizeof(Struct);
 	std::cout << '\n' << "Struct is plain old data : " << std::boolalpha << std::is_pod<Struct>{} << '\n';
-
-	std::cin.get();
 }

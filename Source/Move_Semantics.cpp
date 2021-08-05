@@ -8,7 +8,13 @@ private:
 	unsigned int n = 0;
 
 public:
-	Array(unsigned int n) : array{new T[n]}, n{n} {}
+	Array(const unsigned int& n) : array{new T[n]}, n{n} {}
+
+	Array(const Array& copy_class) : array{new T[copy_class.n]}, n{copy_class.n}
+	{
+		std::cout << "Array Copied" << '\n';
+		for(unsigned int i = 0; i < this->n; i++) this->array[i] = copy_class.array[i];
+	}
 
 	Array(Array&& move_class) noexcept : array{std::move(move_class.array)}, n{move_class.n}
 	{
@@ -17,14 +23,14 @@ public:
 		std::cout << "Array Moved" << '\n';
 	}
 
-	Array(const Array& copy_class) : array{copy_class.array}, n{copy_class.n}
+	~Array()
 	{
-		std::cout << "Array Copied" << '\n';
+		delete array;
 	}
 
-	T& operator[](unsigned int index)
+	T& operator[](const unsigned int& index)
 	{
-		return array[index];
+		return this->array[index];
 	}
 
 	unsigned int Size() const noexcept
@@ -42,8 +48,8 @@ int main()
 		array_1[i] = i;
 	}
 
-	//Array<int> array_2(array_1);
-	Array<int> array_2(std::move(array_1));
+	Array<int> array_2(array_1);
+	//Array<int> array_2(std::move(array_1));
 
 	std::cout << '\n';
 

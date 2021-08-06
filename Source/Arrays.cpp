@@ -7,9 +7,8 @@ int main()
 {
 	int stack_1D[x];
 	int stack_2D[x][y];
-	int* heap_1D = new int[x];
-	int** heap_2D = new int* [x];
-	for(unsigned int i = 0; i < x; i++) heap_2D[i] = new int[y];
+	auto heap_1D = new int[x];
+	auto heap_2D = new int[x][y];
 
 	for(unsigned int i = 0; i < x; i++) heap_1D[i] = i;
 	for(unsigned int i = 0; i < x; i++) stack_1D[i] = i;
@@ -44,9 +43,6 @@ int main()
 		printf("[%d][%d]\n", heap_2D[i][0], heap_2D[i][1]);
 	}
 
-	delete heap_1D;
-	for(unsigned int i = 0; i < x; i++) delete heap_2D[i];
-	delete heap_2D;
-	heap_1D = nullptr;
-	heap_2D = nullptr;
+	delete heap_1D; heap_1D = nullptr;
+	delete heap_2D; heap_2D = nullptr;
 }

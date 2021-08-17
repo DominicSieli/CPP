@@ -1,6 +1,9 @@
 #include "DLL.h"
 
-int Add(int a, int b)
+namespace API
 {
-    return a + b;
+	int Add(int n1, int n2)
+	{
+		return n1 + n2;
+	}
 }

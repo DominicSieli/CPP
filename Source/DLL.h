@@ -1,3 +1,6 @@
 #pragma once
 
-extern int Add(int a, int b);
+namespace API
+{
+	extern int Add(int n1, int n2);
+}
